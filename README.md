@@ -47,6 +47,7 @@ Você precisa ter nesse momento sua credencial IAM AWS, com permissões para cri
 
 Para gerar a AMI siga os passos:
 ```shell
+# Abra a pasta Packer dentro do projeto clonado
 cd Packer
 # Inicializa Packer
 packer init .
