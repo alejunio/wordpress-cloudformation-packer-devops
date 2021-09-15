@@ -59,9 +59,10 @@ packer build -var "aws_access_key=KEY" -var "aws_secret_key=KEY" -var "aws_ami=N
 * aws_access_key= sua aws access_key
 * aws_secret_key= sua aws secret_key
 * aws_ami= nome para sua imagem
-![alt text](https://github.com/alejunio/wordpress-cloudformation-packer-devops/blob/main/img/ami.png?raw=true)
 
+![alt text](https://github.com/alejunio/wordpress-cloudformation-packer-devops/blob/main/img/ami.PNG?raw=true)
 
+![alt text](https://github.com/alejunio/wordpress-cloudformation-packer-devops/blob/main/img/iac-wordpress-aws-alexjunio.png?raw=true)
 
 
 
