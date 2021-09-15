@@ -29,7 +29,7 @@ A Stack está funcional seguindo os requisitos abaixo:
 
 Para utilizar a Stack basta seguir os passos abaixo.
 
-### 1. Clonar o projeto
+#### 1. Clonar o projeto
 Diretamente no terminal você pode clonar o repositório do projeto para sua máquina local
 
 ```shell
