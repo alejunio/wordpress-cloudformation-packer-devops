@@ -29,12 +29,14 @@ A Stack está funcional seguindo os requisitos abaixo:
 
 Para utilizar a Stack basta seguir os passos abaixo.
 
-#### 1. Clonar o projeto
+### 1. Clonar o projeto
 Diretamente no terminal você pode clonar o repositório do projeto para sua máquina local
 
 ```shell
 git clone https://github.com/alejunio/wordpress-cloudformation-packer-devops.git
 ```
+Após clonar o projeto você poderá acessar o diretório contendo todos os arquivos da Stack. 
+Também aconselho abrir o VS Code ou seu editor favorito para editar alguns arquivos que veremos a seguir.
 
 
 ## Serviços e Consultoria
