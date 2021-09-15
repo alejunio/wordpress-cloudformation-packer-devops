@@ -60,6 +60,14 @@ packer build -var "aws_access_key=KEY" -var "aws_secret_key=KEY" -var "aws_ami=N
 * aws_secret_key= sua aws secret_key
 * aws_ami= nome para sua imagem
 
+```shell
+==> Wait completed after 12 minutes 2 seconds
+==> Builds finished. The artifacts of successful builds are:
+--> amazon-ebs.ubuntu-bionic: AMIs were created:
+<sensitive>: ami-0f0d53513b402e9e7
+```
+
+
 ![alt text](https://github.com/alejunio/wordpress-cloudformation-packer-devops/blob/main/img/ami.PNG?raw=true)
 
 
