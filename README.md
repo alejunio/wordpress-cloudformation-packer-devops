@@ -65,7 +65,7 @@ packer build -var "aws_access_key=KEY" -var "aws_secret_key=KEY" -var "aws_ami=N
 * aws_secret_key= sua aws secret_key
 * aws_ami= nome para sua imagem
 
-Após finalizar o processo de deploy da AMI você terá uma saida na tela com a informação do nome da AMI.
+Após finalizar o processo de deploy da AMI você terá uma saida na tela com a informação do nome da AMI. </br>
 Ex: ami-0f0d53513b402e9e7
 
 ```shell
