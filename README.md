@@ -79,8 +79,24 @@ O template responsável por configurar a nossa infraestrutura na AWS é o cf.yam
 * Diretamente na console CloudFormation
 * Pelo terminal via aws-cli 
 
+#### Deploy via Console AWS
+Link:
 
+#### Deploy via AWS CLI
+Abra seu terminal e volte um diretório anterior, caso esteja dentro do diretório do Packer.
 
+```shell
+cd ../
+```
+Para realizar o deploy é crucial que já tenha instalado o AWS CLI e tenha logado com as credenciais. </br>
+Execute o comando abaixo para iniciar o deploy.
+```shell
+aws cloudformation deploy --template-file ./cf.yaml --stack-name stack --parameter-overrides AMI=ami-X KeyName=NameChaveSSH Subnets=subnet-X VpcId=vpc-X
+```
+Para remover a Stack CloudFormation 
+```shell
+aws cloudformation delete-stack --stack-name stack2
+```
 
 ## Serviços e Consultoria
 * https://alexjunio.com.br
