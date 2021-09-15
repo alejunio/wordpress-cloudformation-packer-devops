@@ -62,7 +62,6 @@ packer build -var "aws_access_key=KEY" -var "aws_secret_key=KEY" -var "aws_ami=N
 
 ![alt text](https://github.com/alejunio/wordpress-cloudformation-packer-devops/blob/main/img/ami.PNG?raw=true)
 
-![alt text](https://github.com/alejunio/wordpress-cloudformation-packer-devops/blob/main/img/iac-wordpress-aws-alexjunio.png?raw=true)
 
 
 
