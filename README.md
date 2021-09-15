@@ -14,7 +14,7 @@ O fato de não recomendarmos nesse momento o uso em produção se dá justamente
 # Stack
 A Stack é baseada em:
 
-* CloudFormation (Automacao criacao do EC2)
+* CloudFormation (Automacao criação do EC2)
 * Packer (Geracao de AMI personalizada)
 * Ansible (Automacao na configuração do LEMP)
 
@@ -25,6 +25,16 @@ A Stack está funcional seguindo os requisitos abaixo:
 * Packer instalado na máquina
 * AWS Credentials 
 
+## Utilização
+
+Para utilizar a Stack basta seguir os passos abaixo.
+
+### 1. Clonar o projeto
+Diretamente no terminal você pode clonar o repositório do projeto para sua máquina local
+
+```shell
+git clone https://github.com/alejunio/wordpress-cloudformation-packer-devops.git
+```
 
 
 ## Serviços e Consultoria
