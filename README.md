@@ -26,6 +26,9 @@ A Stack está funcional seguindo os requisitos abaixo:
 * AWS Cli instalado na máquina
 * AWS Credentials IAM
 
+https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html
+https://www.packer.io/downloads
+
 ## Utilização
 
 Para utilizar a Stack basta seguir os passos abaixo.
