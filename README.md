@@ -27,6 +27,7 @@ A Stack está funcional seguindo os requisitos abaixo:
 * AWS Credentials IAM
 
 https://docs.aws.amazon.com/pt_br/cli/latest/userguide/install-cliv2.html </br>
+https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/id_users_create.html#id_users_create_console </br>
 https://www.packer.io/downloads
 
 ## Utilização
