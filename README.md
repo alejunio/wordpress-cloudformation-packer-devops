@@ -75,7 +75,9 @@ Ex: ami-0f0d53513b402e9e7
 <sensitive>: ami-0f0d53513b402e9e7
 ```
 ### 3. Deploy CloudFormation
-
+O template responsável por configurar a nossa infraestrutura na AWS é o cf.yaml , e podemos realizar o deploy de duas formas.
+* Diretamente na console CloudFormation
+* Pelo terminal via aws-cli 
 
 
 
