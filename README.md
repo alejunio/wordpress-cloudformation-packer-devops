@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/alejunio/ansible-wordpress/main/img/ansible-wordpress.png)
+![alt text](https://raw.githubusercontent.com/alejunio/wordpress-cloudformation-packer-devops/main/img/iac-wordpress-aws-alexjunio.png)
 
 # 🚀  Automação Servidor WordPress AWS : CloudFormation e Packer c/ AMI Personalizada (Em Desenvolvimento)
 
