@@ -56,9 +56,13 @@ packer validade .
 # Deploy da AMI
 packer build -var "aws_access_key=KEY" -var "aws_secret_key=KEY" -var "aws_ami=NAME" .
 ```
-aws_access_key= sua aws access_key
-aws_secret_key= sua aws secret_key
-aws_ami= nome para sua imagem
+* aws_access_key= sua aws access_key
+* aws_secret_key= sua aws secret_key
+* aws_ami= nome para sua imagem
+
+Após finalizar, você verá uma tela como a imagem abaixo.
+
+
 
 
 ## Serviços e Consultoria
