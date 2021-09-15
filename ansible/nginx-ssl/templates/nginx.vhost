@@ -137,8 +137,8 @@ server {
         # fastcgi_keep_conn on;
         # fastcgi_read_timeout 300;
 
-         fastcgi_pass   127.0.0.1:9000;
-        # fastcgi_pass  unix:/var/run/php5-fpm.sock;
+        # fastcgi_pass   127.0.0.1:9000;
+         fastcgi_pass  unix:/var/run/php{{versao_php}}-fpm.sock; 
 
         ##
         # FastCGI cache config

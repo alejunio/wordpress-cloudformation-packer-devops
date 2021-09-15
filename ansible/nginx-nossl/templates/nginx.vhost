@@ -138,7 +138,7 @@ server {
         fastcgi_keep_conn on;
         fastcgi_read_timeout 300;
 
-        fastcgi_pass   unix:/var/run/php72-fpm.sock;       
+        fastcgi_pass   unix:/var/run/php{{versao_php}}-fpm.sock;       
         fastcgi_no_cache $no_cache;
         fastcgi_cache_bypass $no_cache;
         fastcgi_cache_valid any 30m;
