@@ -69,6 +69,7 @@ Ex: ami-0f0d53513b402e9e7
 --> amazon-ebs.ubuntu-bionic: AMIs were created:
 <sensitive>: ami-0f0d53513b402e9e7
 ```
+### 3. Deploy CloudFormation
 
 
 
