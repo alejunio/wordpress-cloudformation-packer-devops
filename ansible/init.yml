@@ -1,0 +1,67 @@
+- hosts: all 
+  become: true
+  roles:
+    - php
+    
+  tasks:
+ 
+    # Instalacao MySQL Server
+    - name: Instalando pre-requisitos
+      apt:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - python-mysqldb
+    - name: Instalacao MySQL Server
+      apt:
+        name: mysql-server 
+        state: present
+    - name: Removendo usuarios anonimos
+      community.mysql.mysql_user:
+        name: ''
+        host: localhost
+        state: absent
+
+    # Composer
+    - name: Verificando Composer
+      stat: path=/usr/bin/compose
+      register: stat_result
+    - name: Install Composer 
+      shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+      when: not stat_result.stat.exists
+
+    # WP CLI
+    - name: Verificando WP CLI
+      stat: path=/usr/local/bin/wp
+      register: stat_result
+    - name: Install WP CLI
+      shell: |
+            curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+            chmod +x wp-cli.phar
+            mv wp-cli.phar /usr/local/bin/wp            
+      when: not stat_result.stat.exists 
+
+    # Redis Cache
+    - name: Verificando Redis
+      stat: path=/etc/redis
+      register: stat_result
+    - name: Install Redis
+      shell: |
+            apt install redis-server -y
+            systemctl enable redis-server
+            systemctl start redis-server
+      when: not stat_result.stat.exists
+
+    - name: Preparacao SSL
+      shell: chmod +x sslgenerate.sh
+      
+    # Restart Servicos
+    - name: Restart Servicos 
+      shell: |
+           /etc/init.d/*-fpm restart
+           /etc/init.d/nginx restart
+
+
+  # Variaveis personalizaveis / Definicao de dominio, email, usuarios 
+  vars_files:
+    - /home/projeto/ansible/vars/vars.yml

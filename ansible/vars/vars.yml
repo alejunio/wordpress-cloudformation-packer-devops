@@ -1,0 +1,24 @@
+# Var - MySQL
+db_user: wordpress
+db_user_password: dbpass
+db_name: wordpress
+mysql_root_password: passdbroot
+
+# Var - Nginx e Site
+dominio_site: site.com.br
+diretorio_site: /home/wordpress/public_html 
+email: exemplo@email.com
+
+
+# Var User
+user_site:  wpuser
+password_user: passuser
+group_site: wpuser
+password_user: 
+uid_user: 1003
+
+# PHP Version
+versao_php: 7.4
+
+# Var - SSL
+diretorio_ssl: /etc/letsencrypt/live/{{ dominio_site }}

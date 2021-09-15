@@ -1,0 +1,45 @@
+
+- name: Pacotes Basicos
+  apt:
+    name: software-properties-common
+    state: present 
+
+- name: Add Repositorio PHP 
+  ansible.builtin.apt_repository:
+    repo: 'ppa:ondrej/php'
+  
+- name: Instalando PHP
+  apt:
+    name:
+      - php{{versao_php}}-bcmath
+      - php{{versao_php}}-bz2    
+      - php{{versao_php}}-cli
+      - php{{versao_php}}-common
+      - php{{versao_php}}-curl
+      - php{{versao_php}}-dba   
+      - php{{versao_php}}-enchant   
+      - php{{versao_php}}-fpm
+      - php{{versao_php}}-ftp
+      - php{{versao_php}}-gd    
+      - php{{versao_php}}-gmp  
+      - php{{versao_php}}-imap
+      - php{{versao_php}}-intl
+      - php{{versao_php}}-ldap  
+      - php{{versao_php}}-mbstring   
+      - php{{versao_php}}-odbc
+      - php{{versao_php}}-opcache    
+      - php{{versao_php}}-pgsql     
+      - php{{versao_php}}-pspell
+      - php{{versao_php}}-snmp
+      - php{{versao_php}}-soap    
+      - php{{versao_php}}-xml
+      - php{{versao_php}}-xmlrpc
+      - php{{versao_php}}-zip    
+      - php{{versao_php}}-apcu
+      - php{{versao_php}}-redis
+      - php{{versao_php}}-xsl
+      - php{{versao_php}}-simplexml
+      - php{{versao_php}}-mysql      
+    state: latest
+    update_cache: true
+

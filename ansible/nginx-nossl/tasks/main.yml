@@ -1,0 +1,37 @@
+---
+# tasks file for nginx
+
+
+- name: Instalacao Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Configurando Vhost
+  template:
+    src: nginx.vhost
+    dest: /etc/nginx/sites-available/{{ dominio_site }}.conf
+
+- name: Ativando Vhost
+  file:
+    src: /etc/nginx/sites-available/{{ dominio_site }}.conf
+    dest: /etc/nginx/sites-enabled/{{ dominio_site }}.conf
+    state: link
+
+- name: Diretorio Site
+  file:
+    path: "{{ diretorio_site }}"
+    state: directory
+    owner: www-data
+    group: www-data
+
+- name: Remocao Vhost Default
+  file:
+    path: /etc/nginx/sites-enabled/default 
+    state: absent  
+- name: Remocao Vhost Default
+  file:
+    path: /etc/nginx/sites-available/default 
+    state: absent
+  notify: restart nginx
+

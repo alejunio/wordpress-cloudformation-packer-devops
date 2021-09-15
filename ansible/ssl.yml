@@ -1,0 +1,18 @@
+- hosts: all 
+  become: true
+  roles:
+    - nginx-ssl
+    - ssl
+  
+  tasks:
+
+    # Restart Servicos
+    - name: Restart Servicos 
+      shell: |
+           /etc/init.d/*-fpm restart
+           /etc/init.d/nginx restart
+
+
+  # Variaveis personalizaveis / Definicao de dominio, email, usuarios 
+  vars_files:
+    - /home/projeto/ansible/vars/vars.yml

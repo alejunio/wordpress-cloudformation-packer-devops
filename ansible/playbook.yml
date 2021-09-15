@@ -1,0 +1,51 @@
+- hosts: all 
+  become: true
+  roles:
+    - mysql
+    - nginx-nossl
+    - php
+    - wordpress
+
+  tasks:
+
+    # Configuracao de Usuario p/ Site 
+    - name: Usuario Shell / SFTP
+      ansible.builtin.user:
+        name: "{{ user_site }}"
+        shell: /bin/bash
+        groups: www-data
+        home: "{{ diretorio_site }}"
+        append: yes
+        uid: "{{ uid_user }}" 
+     
+    # Adminer MySQL Tool 
+    - name: Verificando Adminer
+      stat: path={{ diretorio_site }}/adminer.php
+      register: stat_result
+    - name: Install Adminer 
+      shell: |
+            cd {{ diretorio_site }}/ 
+            wget https://github.com/vrana/adminer/releases/download/v4.8.0/adminer-4.8.0.php {{ diretorio_site }}/ 
+            mv adminer-4.8.0.php adminer.php
+            chown -R {{ user_site }}:www-data {{ diretorio_site }}
+      when: not stat_result.stat.exists
+    
+    - name: Permissoes Usuario Shell / SFTP
+      shell: | 
+            chown -R {{ user_site }}:www-data {{ diretorio_site }}/
+            chown -R {{ user_site }}:www-data {{ diretorio_site }}/* 
+            chown -R {{ user_site }}:www-data {{ diretorio_site }}/. 
+            cd {{ diretorio_site }}/
+            find . -type f -exec chmod 664 {} + 
+            find . -type d -exec chmod 775 {} +
+
+    # Restart Servicos
+    - name: Restart Servicos 
+      shell: |
+           /etc/init.d/*-fpm restart
+           /etc/init.d/nginx restart
+
+
+  # Variaveis personalizaveis / Definicao de dominio, email, usuarios 
+  vars_files:
+    - /home/projeto/ansible/vars/vars.yml

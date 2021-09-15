@@ -1,0 +1,9 @@
+  # Instalacao SSL Let's Encrypt
+    - name: Verificando SSL
+      stat: path={{ diretorio_ssl }}/
+      register: stat_result
+    - name: Instalando SSL
+      shell: | 
+            apt install nginx -y
+            certbot --nginx -d {{ dominio_site }} -d www.{{ dominio_site }} --non-interactive --agree-tos -m {{ email }}
+      when: not stat_result.stat.exists

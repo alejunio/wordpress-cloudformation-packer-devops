@@ -1,0 +1,24 @@
+---
+# tasks file for mysql
+
+- name: Criando database WordPress
+  community.mysql.mysql_db:
+    name: "{{ db_name }}"
+    state: present
+
+- name: Criando usuario para a database WordPress
+  community.mysql.mysql_user:
+    name: "{{ db_user }}"
+    password: "{{ db_user_password }}"
+    priv: '*.*:ALL'
+    state: present
+
+- name: user root
+  community.mysql.mysql_user:
+    name: root
+    password: "{{ mysql_root_password }}"
+
+- name: my.cnf root
+  template:
+    src: .my.cnf
+    dest: /root/.my.cnf
