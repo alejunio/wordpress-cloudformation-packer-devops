@@ -23,7 +23,7 @@ A Stack é baseada em:
 
 A Stack está funcional seguindo os requisitos abaixo:
 * Packer instalado na máquina
-* AWS Credentials 
+* AWS Credentials IAM
 
 ## Utilização
 
@@ -38,6 +38,23 @@ git clone https://github.com/alejunio/wordpress-cloudformation-packer-devops.git
 Após clonar o projeto você poderá acessar o diretório contendo todos os arquivos da Stack. 
 Também aconselho abrir o VS Code ou seu editor favorito para editar alguns arquivos que veremos a seguir.
 
+### 2. Geração AMI AWS
+O primeiro passo para o deploy da nossa IAC é gerar a AMI personalizada para que possamos usar na AWS.
+Você precisa ter nesse momento sua credencial IAM AWS, com permissões para criação de EC2 e CloudFormation.
+
+* AWSCloudFormationFullAccess
+* AmazonEC2FullAccess
+
+Para gerar a AMI siga os passos:
+```shell
+cd Packer
+# Inicializa Packer
+packer init .
+# Validacao de arquivos packer
+packer validade .
+# Deploy da AMI
+packer build -var "aws_access_key=KEY" -var "aws_secret_key=KEY" -var "aws_ami=NAME" .
+```
 
 ## Serviços e Consultoria
 * https://alexjunio.com.br
