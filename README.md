@@ -1,6 +1,6 @@
 ![alt text](https://raw.githubusercontent.com/alejunio/ansible-wordpress/main/img/ansible-wordpress.png)
 
-# 🚀  Automação Servidor WordPress AWS : CloudFormation e Packer p/ AMI Personalizada (Em Desenvolvimento)
+# 🚀  Automação Servidor WordPress AWS : CloudFormation e Packer c/ AMI Personalizada (Em Desenvolvimento)
 
 Criação de servidor EC2 para hospedagem de sites WordPress automatizado e personalizado para dev e testes.
 
