@@ -23,6 +23,7 @@ A Stack é baseada em:
 
 A Stack está funcional seguindo os requisitos abaixo:
 * Packer instalado na máquina
+* AWS Cli instalado na máquina
 * AWS Credentials IAM
 
 ## Utilização
