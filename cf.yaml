@@ -9,7 +9,12 @@ Parameters:
     Description: The list of SubnetIds in your Virtual Private Cloud (VPC)
     ConstraintDescription: must be a list of at least two existing subnets associated
       with at least two different availability zones. They should be residing in the
-      selected Virtual Private Cloud. 
+      selected Virtual Private Cloud.
+  AMI:
+    Default: AMI Name
+    Description: AMI Name
+    Type: String
+    ConstraintDescription: Enter the name of your AMI.
   KeyName:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instances
     Type: AWS::EC2::KeyPair::KeyName
@@ -156,7 +161,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:              
       InstanceType: !Ref InstanceType
-      ImageId: ami-06e303d1c679a6d1f
+      ImageId: !Ref AMI
       NetworkInterfaces:
         - GroupSet:
             - !Ref InstanceSecurityGroup
